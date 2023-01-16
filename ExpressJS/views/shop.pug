@@ -1,0 +1,18 @@
+extends layouts/main-layout.pug
+
+block content
+    if prods.length > 0
+        .grid 
+            each product in prods
+                article.card.producr-item 
+                    header.card__header 
+                        h1.product__title #{product.title}
+                    .card__image 
+                        img(src="https://www.shutterstock.com/image-photo/mock-used-magazine-on-gray-600w-689695399.jpg", alt="A Book") 
+                    .card__content 
+                        h2.produce__price $19.99
+                        p.product__description A very intersting book
+                    .card__actions 
+                        button.btn Add to Cart
+    else
+        h1 No Products
